@@ -5,10 +5,13 @@ using UnityEngine;
 public class CursorAffordance : MonoBehaviour {
     
     [SerializeField]
+    [Tooltip("Need to be a sprite set to Texture type: Cursor")]
     Texture2D walkCursor = null;
     [SerializeField]
+    [Tooltip("Need to be a sprite set to Texture type: Cursor")]
     Texture2D attackCursor = null;
     [SerializeField]
+    [Tooltip("Need to be a sprite set to Texture type: Cursor")]
     Texture2D questionCursor = null;
 
     private CameraRaycaster cameraRaycaster;
@@ -21,7 +24,7 @@ public class CursorAffordance : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate (){
         switch (cameraRaycaster.layerHit)
         {
             case Layer.Default:
